@@ -6,5 +6,8 @@ class CashRegister
     self.items = []
     self.last_transaction = {}
   end
+  def add_item(title, price)
+    self
+  end 
 end 
 
