@@ -18,5 +18,11 @@ class CashRegister
     self.total = self.total - (self.total*self.discount/100.to_f)
     "After the discount, the total comes to $#{self.total.to_i}."
   end
+  def void_last_transaction
+    self.total = self.total - self.last_transaction[:price]
+    self.last_transaction[:quantity].times do
+      self.items.pop
+    end
+  end
 end 
 
