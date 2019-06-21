@@ -13,5 +13,10 @@ class CashRegister
     self.last_transaction = { price: price, quantity: quantity }
     self.total = self.total.to_f + price * quantity
   end
+    def apply_discount
+    return "There is no discount to apply." if self.discount == 0
+    self.total = self.total - (self.total*self.discount/100.to_f)
+    "After the discount, the total comes to $#{self.total.to_i}."
+  end
 end 
 
